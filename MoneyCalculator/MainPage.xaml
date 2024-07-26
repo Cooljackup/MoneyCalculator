@@ -1,36 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MoneyCalculator.MainPage">
+             x:Class="MoneyCalculator.MainPage"
+             Title="Money Calculator">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+        <VerticalStackLayout Padding="25" Spacing="25">
 
-            <Label
-                Text="Hello, World!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Label Text="Float Amount:" VerticalOptions="Center"/>
+                <Entry HorizontalTextAlignment="Center" Placeholder="$" WidthRequest="25"/>
+            </HorizontalStackLayout>
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="100">
+                <!-- Start Column -->
+                <VerticalStackLayout>
+                    <Label HorizontalOptions="Center"
+                           Text="Bills" />
+                    <HorizontalStackLayout Spacing="25" Padding="0, 5">
+                        <Label VerticalOptions="Center"
+                               Text="$5" />
+                        <Entry HorizontalTextAlignment="Center"
+                               Placeholder="$"
+                               TextChanged="FiveValue"/>
+                        <Entry IsReadOnly="True"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                <Line Y2="360" Stroke="Red" StrokeThickness="5" />
+                
+                <!-- Center Column -->
+                <VerticalStackLayout>
+                    <Label Text="Hello" />
+                    <Label Text="Hello" />
+                </VerticalStackLayout>
+
+                <Line Y2="360" Stroke="Red" StrokeThickness="5" />
+                
+                <!-- End Column-->
+                <VerticalStackLayout>
+                    <Label Text="Hello" />
+                    <Label Text="Hello" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
